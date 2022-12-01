@@ -18,7 +18,7 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module BenchBnb
+module AuthenticateMe
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -38,7 +38,7 @@ module BenchBnb
 
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore,
-      key: '_bench_bnb_session',
+      key: '_auth_me_session',
       same_site: :lax, 
       secure: Rails.env.production?
 
